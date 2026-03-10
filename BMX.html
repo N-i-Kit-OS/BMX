@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMX Digital Twin</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="libs/three.min.js"></script>
+    <script src="libs/GLTFLoader.js"></script>
+</head>
+<body>
+    <div class="scene">
+        
+        <div class="cube" id="cube">
+            <div class="face front" data-face="front">
+                <img src="resource/1.png" alt="BMX" class="face-image">
+                <div class="face-content">
+                    <div class="content-header">
+                        <h1>Что такое BMX?</h1>
+                        <p><strong>BMX</strong> (Bicycle Motor Cross) — где «Cross» на сленге означает «X»</p>
+                        <p>Изначально создавался для гонок по треку, но райдеры быстро открыли его потенциал для экстремальных трюков на улицах</p>
+                    </div>
+                    <div class="content-columns">
+                        <div class="content-column">
+                            <img src="resource/parkbmx.png" alt="Park" class="content-image">
+                            <div class="content-text">
+                                <ul>
+                                    <li><strong>Рама:</strong> ниже, укороченный задний треугольник</li>
+                                    <li><strong>Вес:</strong> легче — приоритет маневренности</li>
+                                    <li><strong>Прочность:</strong> умеренная — приземления на рампы плавные</li>
+                                    <li><strong>Философия:</strong> чем легче — тем лучше</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content-column">
+                            <img src="resource/streetbmx.png" alt="Street" class="content-image">
+                            <div class="content-text">
+                                <ul>
+                                    <li><strong>Рама:</strong> выше, меньше выбег на вилке</li>
+                                    <li><strong>Вес:</strong> тяжелее — упор на прочность</li>
+                                    <li><strong>Прочность:</strong> максимальная — жёсткие приземления</li>
+                                    <li><strong>Философия:</strong> чем прочнее — тем безопаснее</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="face back" data-face="back">
+                <img src="resource/2.png" alt="How to" class="face-image">
+                <div class="face-content">
+                    <div class="content-header">
+                    </div>
+                </div>
+            </div>
+            <div class="face right" data-face="right">
+                <img src="resource/6.png" alt="Parts" class="face-image">
+                <div class="face-content">
+                    <div class="content-header">
+                        <h1>Сборка BMX</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="face left" data-face="left">
+                <img src="resource/4.png" alt="History" class="face-image">
+                <div class="history-panel">
+                    <div class="history-scroll">
+                        <h2 class="history-title">История BMX</h2>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p><strong>BMX (Bicycle Motocross) — молодой и динамичный спорт, который зародился в Калифорнии в начале 1970-х годов.</strong> Дети, чьи отцы и старшие братья увлекались мотокроссом, начали подражать им, используя для этого свои детские велосипеды на тех же грунтовых трассах. Эта детская забава быстро переросла в организованный вид спорта.</p>
+                            </div>
+                            <img src="resource/history-1.png" alt="Early BMX" class="history-image">
+                        </div>
+
+                        <h3 class="history-subtitle">Рождение и эволюция дисциплин</h3>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p>Первой официальной дисциплиной стал <strong>BMX Racing</strong> — гонки на грунтовых треках с трамплинами и виражами. Популярность рейсинга привела к созданию <strong>American Bicycle Association (ABA)</strong> в 1977 году для организации соревнований.</p>
+                            </div>
+                            <img src="resource/history-2.png" alt="BMX Racing" class="history-image">
+                        </div>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p><strong>BMX Dirt (Dirt Jumping)</strong>: Прыжки на сериях земляных трамплинов, где важна амплитуда и сложность трюка.</p>
+                                <p><strong>BMX Street</strong>: Катание в городской среде с использованием лестниц, перил, парапетов и других архитектурных элементов. Такие базовые трюки, как <strong>Bunny Hop</strong>, изначально использовались просто для запрыгивания на бордюр.</p>
+                            </div>
+                            <img src="resource/history-3.png" alt="Dirt & Street" class="history-image">
+                        </div>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p><strong>BMX Flatland</strong>: Напоминающий танец или цирковое искусство стиль с балансами и вращениями на ровной поверхности.</p>
+                                <p><strong>BMX Vert</strong>: Катание в рампе, где райдер набирает высоту для выполнения трюков в воздухе.</p>
+                                <p><strong>BMX Park</strong>: Гибридное направление со специальными парками, боулами, фанбоксами и гранями.</p>
+                                <p>Все эти стили объединяются под общим названием <strong>BMX Freestyle</strong> — «свободный стиль», где главное — творчество райдера.</p>
+                            </div>
+                            <img src="resource/history-4.png" alt="Freestyle" class="history-image">
+                        </div>
+
+                        <h3 class="history-subtitle">Ключевые события и организации</h3>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p><strong>Конец 1970-х</strong>: Haro, GT, Mongoose начинают массово производить BMX.</p>
+                                <p><strong>1980-е</strong>: Пик Flatland, создание <strong>AFA</strong>, появление системы тормозов <strong>Gyro</strong>.</p>
+                                <p><strong>1995</strong>: Дебют BMX Freestyle на <strong>X-Games</strong>.</p>
+                                <p><strong>2008</strong>: <strong>BMX Racing</strong> входит в программу Олимпийских игр в Пекине.</p>
+                            </div>
+                            <img src="resource/history-5.png" alt="Events" class="history-image">
+                        </div>
+
+                        <h3 class="history-subtitle">Эволюция оборудования</h3>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p><strong>Материалы</strong>: переход на Cr-Mo, алюминий и титан.</p>
+                                <p><strong>Конструкция</strong>: баттинг, термообработка, усиленные узлы.</p>
+                                <p><strong>Специализация</strong>: лёгкие велосипеды для Racing и Flatland, максимально прочные — для Street и Dirt.</p>
+                            </div>
+                            <img src="resource/history-6.png" alt="Equipment" class="history-image">
+                        </div>
+
+                        <h3 class="history-subtitle">Легенды BMX</h3>
+
+                        <div class="history-item">
+                            <div class="history-text">
+                                <p><strong>Мэтт Хоффман</strong>: основатель Bicycle Stunt, пионер сложнейших трюков Vert.</p>
+                                <p><strong>Дэйв Мирра</strong>: рекордсмен X-Games, символ прогресса 1990–2000-х.</p>
+                                <p><strong>Раян Найквист</strong>: универсальный райдер с невероятной стабильностью.</p>
+                                <p>Путь BMX — от детских гонок в Калифорнии до олимпийских стадионов — это история свободы, креативности и технологического прогресса.</p>
+                            </div>
+                            <img src="resource/history-7.png" alt="Legends" class="history-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="face top" data-face="top"><img src="resource/5.png" alt="Best" class="face-image"></div>
+            <div class="face bottom" data-face="bottom">
+                <img src="resource/3.png" alt="Build" class="face-image">
+                <div class="face-content">
+                    <div class="content-header">
+                        <h1>Пособие для чайников</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tricks-container" class="tricks-container"></div>
+    <div id="trick-player-container" class="trick-player-container"></div>
+    <div id="parts-container" class="parts-container"></div>
+    <div id="bmx-3d-container" class="bmx-3d-container"></div>
+    <button id="backButton" class="back-button">←</button>
+    <div class="assembly-panel" id="assemblyPanel">
+        <button class="assembly-close" id="assemblyCloseBtn">✕</button>
+        <div class="assembly-content">
+            <h2 class="assembly-title">Сборка BMX</h2>
+            <div class="assembly-instructions">
+                <p><strong>Инструкция по сборке:</strong></p>
+                <ol>
+                    <li>Найдите базовую деталь — <strong>раму (frame)</strong>. Она расположена в центре и зафиксирована.</li>
+                    <li>Поочерёдно перетаскивайте каждую деталь из нижней части экрана на соответствующее место на раме.</li>
+                    <li>При правильном расположении деталь «примагнитится» к своей позиции.</li>
+                    <li>Продолжайте сборку, пока все детали не будут установлены на свои места.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="part-info-panel" id="partInfoPanel">
+        <button class="part-info-close" id="partInfoCloseBtn">✕</button>
+        <div class="part-info-content">
+            <h2 class="part-info-title" id="partInfoTitle">Название детали</h2>
+            <div class="part-info-description">
+                <p id="partInfoText">Описание детали</p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/scripts.js"></script>
+
+</body>
+</html>
